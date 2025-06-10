@@ -13,9 +13,7 @@ extension KeyboardController {
   var itemPadding: Double { 8.0 }
   var numRows: Int { 3 }
   
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 3
-  }
+  // REMOVED numberOfSections(in:) here to avoid duplicate declaration
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
@@ -40,3 +38,4 @@ extension KeyboardController {
     return CGSize(width: widthPerItem, height: height)
   }
 }
+

@@ -40,17 +40,25 @@ class LetterCell: UICollectionViewCell {
    2. incorrect should set the background and border color to a red-green-blue-alpha (RGBA) value of 0.23, 0.23, 0.24, 1.0 respectively
    3. correctLetterOnly should set the background and border color to a RGBA value of 0.69, 0.63, 0.30, 1.0 respectively
    4. correctLetterAndPosition should set the background and border color to a RGBA value of 0.38, 0.55, 0.33, 1.0 respectively
-
-   Tip 1: Use a switch-case statement to enumerate among the possible values of LetterCellStyle
-   Tip 2: `contentView` is a UIView. Look at the documentation to see what property you can change to modify its background color
-   Tip 3: Look at what initializers UIColor has in the API documentation
-   Tip 4: Look above at the init method to see how to change the borderColor
-   
-   // Checkpoint: After finishing this exercise, you should now see that the board is accurately colored based on your guess! If it's not working, make sure you have done this exercise correctly.
-   */
+  */
   func set(style: LetterCellStyle) {
-    // START YOUR CODE HERE
-    // ...
-    // END YOUR CODE HERE
+    switch style {
+    case .initial:
+      contentView.backgroundColor = .black
+      layer.borderColor = UIColor.gray.cgColor
+    case .incorrect:
+      let color = UIColor(red: 0.23, green: 0.23, blue: 0.24, alpha: 1.0)
+      contentView.backgroundColor = color
+      layer.borderColor = color.cgColor
+    case .correctLetterOnly:
+      let color = UIColor(red: 0.69, green: 0.63, blue: 0.30, alpha: 1.0)
+      contentView.backgroundColor = color
+      layer.borderColor = color.cgColor
+    case .correctLetterAndPosition:
+      let color = UIColor(red: 0.38, green: 0.55, blue: 0.33, alpha: 1.0)
+      contentView.backgroundColor = color
+      layer.borderColor = color.cgColor
+    }
   }
 }
+
